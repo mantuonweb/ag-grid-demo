@@ -20,10 +20,22 @@ export class AppComponent {
             context: {
                 componentParent: this
             },
-            enableColResize: true
+            enableColResize: true,
         };
     }
-
+    onGridReady(event){
+      // this.gridApi = event.api;
+      // this.gridColumnApi = event.columnApi;
+  
+      event.api.sizeColumnsToFit();
+  
+      event.api.sizeColumnsToFit();
+      window.addEventListener("resize", function() {
+        setTimeout(function() {
+          event.api.sizeColumnsToFit();
+        });
+      });
+    }
     // noinspection JSMethodCanBeStatic
     public methodFromParent(cell) {
         alert(`"Parent Component Method from ${cell}!`);
@@ -37,9 +49,9 @@ export class AppComponent {
   ];
 
   rowData = [
-    { make: 'Toyota', model: 'Celica', price: 2 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
+    { make: 'Toyota', model: 'Celica', price: 2 ,action:'edit'},
+    { make: 'Ford', model: 'Mondeo', price: 32000,action:'edit' },
+    { make: 'Porsche', model: 'Boxter', price: 72000,action:'edit' }
   ];
 
 }
