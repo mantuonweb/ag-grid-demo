@@ -42,10 +42,10 @@ export class AppComponent {
     }
   //https://www.ag-grid.com/angular-getting-started/
   columnDefs = [
-    { headerName: 'Make', field: 'make', filter: true, sortable: true },
-    { headerName: 'Model', field: 'model', filter: true, sortable: true },
-    { headerName: 'Price', field: 'price', filter: true, sortable: true, cellRendererFramework: CubeComponent },
-    { headerName: 'Action', field: 'value', cellRendererFramework: ButtonComponent }
+    { headerName: 'Make', field: 'make', filter: true, sortable: true,suppressMovable: true },
+    { headerName: 'Model', field: 'model', filter: true, sortable: true,suppressMovable: true },
+    { headerName: 'Price', field: 'price', filter: true, sortable: true, cellRendererFramework: CubeComponent ,suppressMovable: true},
+    { headerName: 'Action', field: 'value', cellRendererFramework: ButtonComponent ,suppressMovable: true}
   ];
 
   rowData = [
