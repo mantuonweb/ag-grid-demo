@@ -10,6 +10,9 @@ import { GridOptions } from 'ag-grid-community';
 })
 export class AppComponent {
   title = 'aggrid';
+  gridApi;
+  gridColumnApi;
+
   public gridOptions: GridOptions;
 
     constructor() {
@@ -24,8 +27,8 @@ export class AppComponent {
         };
     }
     onGridReady(event){
-      // this.gridApi = event.api;
-      // this.gridColumnApi = event.columnApi;
+      this.gridApi = event.api;
+      this.gridColumnApi = event.columnApi;
   
       event.api.sizeColumnsToFit();
   
@@ -38,7 +41,9 @@ export class AppComponent {
     }
     // noinspection JSMethodCanBeStatic
     public methodFromParent(cell) {
-        alert(`"Parent Component Method from ${cell}!`);
+        this.rowData[cell.node.rowIndex].price = 8;
+        this.gridApi.setRowData(this.rowData);
+        //alert(`"Parent Component Method from ${cell}!`);
     }
   //https://www.ag-grid.com/angular-getting-started/
   columnDefs = [

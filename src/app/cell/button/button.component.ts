@@ -18,7 +18,7 @@ export class ButtonComponent implements ICellRendererAngularComp {
     }
 
     public invokeParentMethod() {
-        this.params.context.componentParent.methodFromParent(`Row: ${this.params.node.rowIndex}, Col: ${this.params.colDef.headerName}`)
+        this.params.context.componentParent.methodFromParent(this.params,`Row: ${this.params.node.rowIndex}, Col: ${this.params.colDef.headerName}`)
     }
 
     refresh(): boolean {
