@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CubeComponent } from './cube/cube.component';
-import { ButtonComponent } from './button/button.component';
+import { CubeComponent } from './cell/cube/cube.component';
+import { ButtonComponent } from './cell/button/button.component';
 import { GridOptions } from 'ag-grid-community';
 
 @Component({
