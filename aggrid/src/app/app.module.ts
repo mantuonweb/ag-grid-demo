@@ -4,14 +4,18 @@ import { AgGridModule } from 'ag-grid-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CubeComponent } from './cube/cube.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CubeComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule, 
-    AgGridModule.withComponents([]),
+    AgGridModule.withComponents([CubeComponent,ButtonComponent]),
     AppRoutingModule,
   ],
   providers: [],
